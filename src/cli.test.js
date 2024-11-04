@@ -20,4 +20,33 @@ describe("CliInterpretor", () => {
             expect(result).toStrictEqual(false);
         });
     });
+
+    describe("getOptionValue", () => {
+        it("Should return value when providing an option followed by its value", () => {
+            // Given
+            const args = ["node", "app.js", "--filter", "test"];
+            const cli = new CliInterpretor(args);
+            // When
+            const result = cli.getOptionValue("filter");
+            expect(result).toStrictEqual("test");
+        });
+
+        it("Should return null when providing an option with no value", () => {
+            // Given
+            const args = ["node", "app.js", "--count"];
+            const cli = new CliInterpretor(args);
+            // When
+            const result = cli.getOptionValue("count");
+            expect(result).toStrictEqual(null);
+        });
+
+        it("Should return undefined when providing an undefined option", () => {
+            // Given
+            const args = ["node", "app.js", "--count"];
+            const cli = new CliInterpretor(args);
+            // When
+            const result = cli.getOptionValue("filter");
+            expect(result).toStrictEqual(undefined);
+        });
+    });
 });
