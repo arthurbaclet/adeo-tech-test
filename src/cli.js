@@ -1,21 +1,30 @@
 class CliInterpretor {
-    #args;
+    #options;
 
     constructor(argArray) {
-        this.#args = argArray;
+        const isOption = new RegExp("^--");
+
+        this.#options = argArray
+            .reduce((options, optionStr) => {
+                if (isOption.test(optionStr)) {
+                    const option = optionStr.split("=");
+                    const optionName = option[0];
+                    const optionValue = option[1];
+
+                    return {
+                        ...options,
+                        [optionName]: optionValue || null
+                    } 
+                }
+            }, {});
     }
 
     hasOption(optionName) {
-        return (this.#args.indexOf(`--${optionName}`) >= 0);
+        return this.#options[`--${optionName}`] !== undefined;
     }
 
     getOptionValue(optionName) {
-        const optionIndex = this.#args.indexOf(`--${optionName}`);
-        if (optionIndex === -1) {
-            return undefined;
-        } else {
-            return this.#args[optionIndex + 1] || null;
-        }
+        return this.#options[`--${optionName}`];
     }
 }
 

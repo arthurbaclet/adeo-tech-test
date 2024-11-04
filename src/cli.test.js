@@ -26,7 +26,7 @@ describe("CliInterpretor", () => {
     describe("getOptionValue", () => {
         it("Should return value when providing an option followed by its value", () => {
             // Given
-            const args = ["node", "app.js", "--filter", "test"];
+            const args = ["node", "app.js", "--filter=test"];
             const cli = new CliInterpretor(args);
             // When
             const result = cli.getOptionValue("filter");
