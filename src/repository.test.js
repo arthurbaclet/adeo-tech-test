@@ -45,12 +45,20 @@ describe("Repository", () => {
     });
     describe("GetEntriesByAnimalName", () => {
         it("Should return all entries when no name pattern is provided", () => {
-          // Given
-          const repo = new Repository(dataMock);
-          // When
-          const result = repo.getEntriesByAnimalName();
-          // Then
-          expect(result).toStrictEqual(dataMock);            
+            // Given
+            const repo = new Repository(dataMock);
+            // When
+            const result = repo.getEntriesByAnimalName();
+            // Then
+            expect(result).toStrictEqual(dataMock);            
+        });
+        it("Should return all entries when name pattern is null", () => {
+            // Given
+            const repo = new Repository(dataMock);
+            // When
+            const result = repo.getEntriesByAnimalName(null);
+            // Then
+            expect(result).toStrictEqual(dataMock);            
         });
         it("Should return filtered entries based on provided name pattern", () => {
             // Given

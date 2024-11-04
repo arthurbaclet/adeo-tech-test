@@ -9,7 +9,8 @@ class Repository {
         return this.#data;
     }
 
-    getEntriesByAnimalName(namePattern) {
+    getEntriesByAnimalName(name) {
+        const namePattern = name || "";
         return this.#data
             .map((country) => {
                 const people = country.people
