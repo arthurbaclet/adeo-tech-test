@@ -1,7 +1,7 @@
-const { formatNamesWithChildrenCount } = require("./utils");
-const Repository = require("./repository");
-const CliInterpretor = require("./cli");
-const { data } = require("../data");
+const { formatNamesWithChildrenCount } = require("./src/utils");
+const Repository = require("./src/repository");
+const CliInterpretor = require("./src/cli");
+const { data } = require("./data");
 
 const repo = new Repository(data);
 const cli = new CliInterpretor(process.argv);
