@@ -10,10 +10,13 @@ const result = cli.hasOption("filter")
     ? repo.getEntriesByAnimalName(cli.getOptionValue("filter"))
     : repo.getAllEntries()
 
-const output = cli.hasOption("count")
-    ? formatNamesWithChildrenCount(result)
-    : result;
 
-console.log(
-    JSON.stringify(output, null, 2)
-);
+if (result.length) {
+    const output = cli.hasOption("count")
+        ? formatNamesWithChildrenCount(result)
+        : result;
+
+    console.log(
+        JSON.stringify(output, null, 2)
+    );
+}
