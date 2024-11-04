@@ -8,6 +8,7 @@ describe("CliInterpretor", () => {
             const cli = new CliInterpretor(args);
             // When
             const result = cli.hasOption("count");
+            // Then
             expect(result).toStrictEqual(true);
         });
 
@@ -17,6 +18,7 @@ describe("CliInterpretor", () => {
             const cli = new CliInterpretor(args);
             // When
             const result = cli.hasOption("filter");
+            // Then
             expect(result).toStrictEqual(false);
         });
     });
@@ -28,6 +30,7 @@ describe("CliInterpretor", () => {
             const cli = new CliInterpretor(args);
             // When
             const result = cli.getOptionValue("filter");
+            // Then
             expect(result).toStrictEqual("test");
         });
 
@@ -37,6 +40,7 @@ describe("CliInterpretor", () => {
             const cli = new CliInterpretor(args);
             // When
             const result = cli.getOptionValue("count");
+            // Then
             expect(result).toStrictEqual(null);
         });
 
@@ -46,6 +50,7 @@ describe("CliInterpretor", () => {
             const cli = new CliInterpretor(args);
             // When
             const result = cli.getOptionValue("filter");
+            // Then
             expect(result).toStrictEqual(undefined);
         });
     });
