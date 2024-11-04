@@ -1,0 +1,22 @@
+{
+  "name": "adeo-tech-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/arthurbaclet/adeo-tech-test.git"
+  },
+  "author": "arthur baclet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthurbaclet/adeo-tech-test/issues"
+  },
+  "homepage": "https://github.com/arthurbaclet/adeo-tech-test#readme"
+}
